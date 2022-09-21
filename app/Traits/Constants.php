@@ -23,6 +23,7 @@ class Constants
    public static $NO_USER_REGISTER = ['code' => '1006', 'message' => 'Record not found.'];
    public static $USER_PASSWORD_DISMATCH = ['code' => '1007', 'message' => 'Current password does not match.'];
    public static $USER_EMAIL_NOEXIST = ['code' => '1008', 'message' => "Email address doesn't exist!"];
+   public static $USER_NOT_BALANCE= ['code' => '1009', 'message' => "User does not have available balance."];
 
     //EXCEPTIONS ERRORS FOR LOGIN GENERIC
     public static $USER_TOKEN_EXPIRED = ['code' => '1010', 'message' => "Your token has expired. Please, login again."];
@@ -30,6 +31,7 @@ class Constants
     public static $USER_NO_TOKEN= ['code' => '1012', 'message' => "Please, attach a Bearer Token to your request."];
     public static $USER_NO_VALIDATE_ERROR = ['code' => '1013', 'message' => 'user no validate'];
     public static $USER_VALIDATE_ERROR = ['code' => '1014', 'message' => 'user is already validated'];
+    public static $USER_CODE_CONFIRMATION_NO_EXIST = ['code' => '1015', 'message' => "User does not have confirmation code."];
 
 
    //GENERAL MESSAGES

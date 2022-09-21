@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class RestResource extends JsonResource
+class ResponseResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,12 +16,7 @@ class RestResource extends JsonResource
     {
         return [
             'status' => true,
-            'message' => 'Operation On Wallet successfully registered',
-            'wallet' => [
-                'user_id' => $this->user_id,
-                'current_balance' => $this->current_balance,
-                'created_at' => $this->created_at->format('d/m/Y'),
-            ]
+            'message' => 'Process successfully registered',
         ];
     }
 }

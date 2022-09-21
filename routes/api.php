@@ -27,4 +27,7 @@ Route::controller(AuthController::class)->group(function () {
 Route::controller(RestController::class)->group(function () {
 	Route::post('recarga-billetera', 'Wallet');
     Route::get('consultar-billetera', 'Balance');
+    Route::post('pagar-billetera', 'Pay');
+    Route::get('verificar/{code}/{token}', 'Verify');
+
 });

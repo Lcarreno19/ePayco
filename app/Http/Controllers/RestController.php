@@ -62,4 +62,55 @@ class RestController extends ApiController
             return $this->errorResponse($e);
         }
     }
+
+
+      /**
+     * Register a User.
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function Pay(Request $request)
+    {
+
+        try {
+
+            return $this->successResponse(
+                Rest::payWallet($request),
+                Constants::$HTTP_OK);
+
+        } catch (Exception $e) {
+
+            throw new CustomException(
+                $e->getMessage(),
+                Constants::$UNKNOW_ERROR['code']);
+
+        } catch (CustomException $e) {
+
+            return $this->errorResponse($e);
+        }
+    }
+
+     /**
+     * Register a User.
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function Verify(Request $request, $code, $token)
+    {
+
+        try {
+
+            return $this->successResponse(
+                Rest::verifyPayOnWallet($request , $code, $token),
+                Constants::$HTTP_CREATED);
+
+        } catch (Exception $e) {
+
+            throw new CustomException(
+                $e->getMessage(),
+                Constants::$UNKNOW_ERROR['code']);
+
+        } catch (CustomException $e) {
+
+            return $this->errorResponse($e);
+        }
+    }
 }

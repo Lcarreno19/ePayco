@@ -26,7 +26,7 @@ class Authenticador extends Model
         if (Util::initAuth($request) == 1) {
 
             $validator = Validator::make($request->all(), [
-                'email' => 'required',
+                'email'    => 'required',
                 'password' => 'required'
             ]);
 
@@ -73,7 +73,7 @@ class Authenticador extends Model
 
                 return [
                     'access_token' => $token,
-                    'email' => $user->email
+                    'email'        => $user->email
                 ];
             }
         }  else {
@@ -112,11 +112,11 @@ class Authenticador extends Model
                     Constants::$MISSING_PARAMETERS['code']);
             } else {
 
-                $user = new User();
-                $user->name = $request->name;
-                $user->email = $request->email;
+                $user           = new User();
+                $user->name     = $request->name;
+                $user->email    = $request->email;
                 $user->document = $request->document;
-                $user->phone = $request->phone;
+                $user->phone    = $request->phone;
                 $user->password = bcrypt($request->password);
                 $user->save();
 
